@@ -63,7 +63,7 @@ public class ScreenPointPixel : MonoBehaviour
 
 
 #if UNITY_ANDROID || UNITY_IOS || UNITY_WSA_10_0
-            if (!(Input.touchCount > 0) || ProcessTap.onMesh || EventSystem.current.IsPointerOverGameObject(0))
+            if (!(Input.touchCount > 0) || Utilities.IsPointerOverUIObject())
             {
                 yield return null;
                 continue;
@@ -73,7 +73,7 @@ public class ScreenPointPixel : MonoBehaviour
             int x = Mathf.FloorToInt(Input.GetTouch(0).position.x);
             int y = Mathf.FloorToInt(Input.GetTouch(0).position.y);
 
-            eyeDropperImage.transform.position =  Vector3.Lerp(eyeDropperImage.transform.position, new Vector3(x,y,0), Time.deltaTime * 20);
+            eyeDropperImage.transform.position = Vector3.Lerp(eyeDropperImage.transform.position, new Vector3(x, y, 0), Time.deltaTime * 20);
 #else
             //Use mouse position as the pixel position
             int x = Mathf.FloorToInt(Input.mousePosition.x);
@@ -95,7 +95,7 @@ public class ScreenPointPixel : MonoBehaviour
             tempColor.b = screenData[2];
             tempColor.a = screenData[3];
 
-            RawImageColor.Instance.image.color  = tempColor;
+            RawImageColor.Instance.image.color = tempColor;
 
             //Wait for a frame
             yield return null;
