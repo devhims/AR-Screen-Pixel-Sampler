@@ -7,6 +7,7 @@ Allows us to sample color of the screen pixel and store it locally on a raw imag
 3. Build the scene title "ARScene" on an ARCore compatible device 
 
 ## Reference:
+Based on the work of @programmercert:
 https://github.com/programmercert/ScreenPointPixel
 
 ## What's New:
