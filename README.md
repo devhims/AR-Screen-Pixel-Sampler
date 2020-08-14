@@ -8,3 +8,9 @@ Allows us to sample color of the screen pixel and store it locally on a raw imag
 
 ## Reference:
 https://github.com/programmercert/ScreenPointPixel
+
+## What's New:
+1. The eye dropper image UI included which indicates which screen pixel is selected.
+2. Screen pixels over all UI elements are ignored for selection.
+3. Use the selected color to adjust the material on a separate mesh renderer. In this case, a free Mario asset with Skinned Mesh Renderer is used. 
+4. Option to restore the original material colors for all modified mesh renderers. 
